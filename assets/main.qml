@@ -4,9 +4,6 @@ import bb.device 1.0
 Page {
     id: mainPage
     attachedObjects:[
-//        DisplayInfo{
-//            id: deviceDisplayInfo
-//        },
         HardwareInfo{
             id: deviceHardwareInfo
         },
@@ -18,6 +15,15 @@ Page {
         },
         SdCardInfo{
             id: deviceSDCardInfo
+        },
+        CellularNetworkInfo{
+            id: deviceCellNetworkInfo
+        },
+        CellularRadioInfo{
+            id: deviceCellRadioInfo
+        },
+        SimCardInfo{
+            id: deviceSIMInfo
         }
     ]
     Container {
@@ -42,9 +48,7 @@ Page {
                         }
                         Label {
                             text: ListItemData.title
-                        }
-                        Label{
-                            text: ListItemData.value
+                            multiline: true
                         }
                     }
                 }
@@ -57,16 +61,13 @@ Page {
                 listDataModel.insert({"key" : "Battery Info", "title" : ("Battery Condition: " + deviceBatteryInfo.condition)});
                 listDataModel.insert({"key" : "Battery Info", "title" : ("Battery Present: " + deviceBatteryInfo.present)});
                 listDataModel.insert({"key" : "Device Info", "title" : ("Device Orientation: " + deviceInfo.orientation)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display ID: " + deviceDisplayInfo.displayId)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Name: " + deviceDisplayInfo.displayName)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Pixels: " + deviceDisplayInfo.pixelSize)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Size: " + deviceDisplayInfo.physicalSize)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Resolution: " + deviceDisplayInfo.resolution)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Aspect Type: " + deviceDisplayInfo.aspectType)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Attached: " + deviceDisplayInfo.attached)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Detachable: " + deviceDisplayInfo.detachable)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Aspect Type: " + deviceDisplayInfo.aspectType)});
-                //                listDataModel.insert({"key" : "Display Info", "title" : ("Display Technology: " + deviceDisplayInfo.displayTechnology)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Detachable: " + DisplayInfo.detachable)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Attached: " + DisplayInfo.attached)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Pixels: " + DisplayInfo.height + " x " + DisplayInfo.width)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Secondary ID: " + DisplayInfo.secondaryID)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Primary ID: " + DisplayInfo.primaryID)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display ID: " + DisplayInfo.id)});
+                listDataModel.insert({"key" : "Display Info", "title" : ("Display Name: " + DisplayInfo.name)});
                 listDataModel.insert({"key" : "Hardware Info", "title" : ("Keyboard Attached: " + deviceHardwareInfo.isPhysicalKeyboardDevice)});
                 listDataModel.insert({"key" : "Hardware Info", "title" : ("Model Number: " + deviceHardwareInfo.modelNumber)});
                 listDataModel.insert({"key" : "Hardware Info", "title" : ("Model Name: " + deviceHardwareInfo.modelName)});
@@ -77,22 +78,16 @@ Page {
                 listDataModel.insert({"key" : "Hardware Info", "title" : ("Serial#: " + deviceHardwareInfo.serialNumber)});
                 listDataModel.insert({"key" : "Hardware Info", "title" : ("Device Pin: " + deviceHardwareInfo.pin)}); 
                 listDataModel.insert({"key" : "SD Card Info", "title" : ("SD Card State: " + deviceSDCardInfo.state)}); 
-                listDataModel.insert({"key" : "SD Card Info", "title" : ("SD Card Activity: " + deviceSDCardInfo.activity)});                  
+                listDataModel.insert({"key" : "SD Card Info", "title" : ("SD Card Activity: " + deviceSDCardInfo.activity)});
+                listDataModel.insert({"key" : "Radio Info", "title" : ("Supported Technologies: " + deviceCellRadioInfo.technologies)});
+                listDataModel.insert({"key" : "Radio Info", "title" : ("SIM IMSI: " + deviceSIMInfo.subscriberIdentifier)});
+                listDataModel.insert({"key" : "Radio Info", "title" : ("SIM Serial#: " + deviceSIMInfo.serialNumber)});
+                listDataModel.insert({"key" : "Radio Info", "title" : ("Local Area Code: " + deviceCellNetworkInfo.locationAreaCode)});
+                listDataModel.insert({"key" : "Radio Info", "title" : ("Home Network Info: " + deviceSIMInfo.mobileCountryCode + "(" + deviceSIMInfo.mobileNetworkCode) + ")"});  
+                listDataModel.insert({"key" : "Radio Info", "title" : ("Cellular Network: " + deviceCellNetworkInfo.name)});     
+                listDataModel.insert({"key" : "Radio Info", "title" : ("SIM Card State: " + deviceSIMInfo.state)});
             }
         }
     }
-//    onCreationCompleted:{
-////        Qt.mainPage = mainPage;
-////        Qt.deviceInfo = deviceInfo;
-////        Qt.deviceBatteryInfo = deviceBatteryInfo;
-//    }
-//    function stripString(valueToStrip){
-//        console.log(valueToStrip)
-//        var stripped = valueToStrip.split()
-//        console.log(stripped)
-//        stripped = stripped.join()
-//        console.log(stripped)
-//        return stripped;
-//    }
 }
 
