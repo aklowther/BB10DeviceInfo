@@ -1,0 +1,29 @@
+<root>
+	<header key="Battery Info"/>
+	<item title= "Battery Present: " value="BatteryInfo.present"/>
+	<item title= "Battery Condition: " value="Qt.deviceBatteryInfo.condition"/>
+	<item title= "Battery Level: " value="Qt.deviceBatteryInfo.level"/>
+	<item title= "Battery Charging: " value="Qt.deviceBatteryInfo.chargingState"/>
+	<item title= "Battery Cycle Count: " value="Qt.deviceBatteryInfo.cycleCount"/>
+
+    <header key="Device Info"/>
+    <item title= "Device Orientation: " value="deviceInfo.orientation"/>
+
+    <header key="Display Info"/>
+    <item title= "Display ID: " value="deviceDisplayInfo.displayId"/>
+    <item title= "Display Name: " value="deviceDisplayInfo.displayName"/>
+    <item title= "Display Pixels: " value="deviceDisplayInfo.pixelSize"/>
+    <item title= "Display Size: " value="deviceDisplayInfo.physicalSize"/>
+    <item title= "Display Resolution: " value="deviceDisplayInfo.resolution"/>
+    <item title= "Display Aspect Type: " value="deviceDisplayInfo.aspectType"/>
+    <item title= "Display Attached: " value="deviceDisplayInfo.attached"/>
+    <item title= "Display Detachable: " value="deviceDisplayInfo.detachable"/>
+	<item title= "Display Technology: " value="deviceDisplayInfo.displayTechnology"/>
+
+    <header key="Hardware Info"/>
+    <item title= "Battery Present: " value="deviceBatteryInfo.present"/>
+	<item title= "Battery Condition: " value="deviceBatteryInfo.condition"/>
+	<item title= "Battery Level: " value="deviceBatteryInfo.level"/>
+	<item title= "Battery Charging: " value="deviceBatteryInfo.chargingState"/>
+	<item title= "Battery Cycle Count: " value="deviceBatteryInfo.cycleCount"/>
+</root>
